@@ -52,7 +52,7 @@ def setup_audio() -> None:
     pyxel.musics[_BGM_MUSIC].set([0], [1], [2], [3])
 
     pyxel.sounds[_SFX_TRAIL_SUCCESS].set(
-        _notes("c4 e4 g4 c4"), "p", "7654", "nnnn", 12
+        _notes("g4 r c4 r g4"), "n", "70707", "fnfnf", 6
     )
     pyxel.sounds[_SFX_MISS].set(
         _notes("c3 g2 c2"), "n", "765", "ffn", 10
