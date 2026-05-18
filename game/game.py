@@ -187,15 +187,15 @@ class Game:
             normal_cells, _drift_cells, trail_len = self._field.complete_trail(
                 drift_positions
             )
-            play_trail_success_sfx()
             self._score.add_claimed(normal_cells, drift_side=False)
 
             if trail_len > 0:
                 self._score.restore_energy(ENERGY_TRAIL_K * (trail_len**ENERGY_TRAIL_N))
 
             if self._field.claimed_ratio >= CLEAR_RATIO:
-                play_stage_clear_sfx()
-                self.current_state = GameState.STAGE_CLEAR
+                self._enter_stage_clear()
+            else:
+                play_trail_success_sfx()
 
     def _enter_miss(self) -> None:
         """ミス演出開始。即座にエネルギーペナルティを適用する。"""
@@ -218,6 +218,7 @@ class Game:
         if pyxel.btnp(pyxel.KEY_Z):
             self._score.next_stage()  # エネルギーボーナス込み
             self._setup_stage()
+            play_bgm()
             self.current_state = GameState.PLAYING
 
     def _update_game_over(self) -> None:
@@ -229,6 +230,11 @@ class Game:
         stop_bgm()
         play_game_over_sfx()
         self.current_state = GameState.GAME_OVER
+
+    def _enter_stage_clear(self) -> None:
+        stop_bgm()
+        play_stage_clear_sfx()
+        self.current_state = GameState.STAGE_CLEAR
 
     def _draw_game_scene(self) -> None:
         pyxel.cls(0)
