@@ -1,0 +1,31 @@
+# 仮想環境
+.venv/
+
+# Pythonキャッシュ
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Pyxelリソース (自動生成物のみ除外する場合はコメントアウト)
+# *.pyxres
+# *.pyxapp
+
+# Claude Code プロジェクト設定
+.claude/
+
+# Windows
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# エディタ
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+
+AGENTS.md
+CLAUDE.md
