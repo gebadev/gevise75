@@ -43,6 +43,17 @@ It is implemented in Python with [Pyxel](https://github.com/kitao/pyxel).
 | Q | Return to title while playing |
 | ESC | Quit game |
 
+## Run the Game
+
+Install dependencies, then start the game:
+
+```bash
+pip install -r requirements.txt
+python src/main.py
+```
+
+Pyxel application files and HTML files are also distributed on the [Releases page](https://github.com/gebadev/gevise75/releases).
+
 ## Note
 
 This is a non-commercial project created as a personal tribute to classic territory-claiming arcade games.
